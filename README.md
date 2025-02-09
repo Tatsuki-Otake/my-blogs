@@ -61,10 +61,9 @@ docker-compose exec backend rails db:seed
 ```
 
 ## 動作確認
-
-フロントエンド: http://localhost:3001
-バックエンドAPI: http://localhost:3000
-データベース: localhost:3306
+- フロントエンド: http://localhost:3001
+- バックエンドAPI: http://localhost:3000
+- データベース: localhost:3306
 
 ## 開発用コマンド
 ```bash
