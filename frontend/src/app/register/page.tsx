@@ -43,7 +43,7 @@ export default function Register() {
           placeholder="メールアドレス"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="border p-2 w-full"
+          className="border p-2 w-full text-black"
           required
         />
         <input
@@ -51,7 +51,7 @@ export default function Register() {
           placeholder="パスワード"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="border p-2 w-full"
+          className="border p-2 w-full text-black"
           required
         />
         <input
@@ -59,7 +59,7 @@ export default function Register() {
           placeholder="パスワード確認"
           value={passwordConfirmation}
           onChange={(e) => setPasswordConfirmation(e.target.value)}
-          className="border p-2 w-full"
+          className="border p-2 w-full text-black"
           required
         />
         <button type="submit" className="bg-blue-500 text-white p-2 rounded">
