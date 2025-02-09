@@ -86,17 +86,17 @@ docker-compose down -v
 ## API エンドポイント
 ### 記事関連
 
-GET /api/v1/articles - 記事一覧の取得
-GET /api/v1/articles/:id - 記事詳細の取得
-POST /api/v1/articles - 記事の作成
-PATCH /api/v1/articles/:id - 記事の更新
-DELETE /api/v1/articles/:id - 記事の削除
+- GET /api/v1/articles - 記事一覧の取得
+- GET /api/v1/articles/:id - 記事詳細の取得
+- POST /api/v1/articles - 記事の作成
+- PATCH /api/v1/articles/:id - 記事の更新
+- DELETE /api/v1/articles/:id - 記事の削除
 
 ### 認証関連
 
-POST /api/v1/auth/sign_in - ログイン
-DELETE /api/v1/auth/sign_out - ログアウト
-POST /api/v1/auth - ユーザー登録
+- POST /api/v1/auth/sign_in - ログイン
+- DELETE /api/v1/auth/sign_out - ログアウト
+- POST /api/v1/auth - ユーザー登録
 
 ## ディレクトリ構造
 ```
@@ -117,9 +117,9 @@ backend/
 
 ### 注意事項
 
-開発環境ではフロントエンドのホットリロードが有効
-バックエンドのコード変更は自動で反映
-データベースのデータは Docker ボリュームに永続化
+- 開発環境ではフロントエンドのホットリロードが有効
+- バックエンドのコード変更は自動で反映
+- データベースのデータは Docker ボリュームに永続化
 
 ### ライセンス
 MIT
