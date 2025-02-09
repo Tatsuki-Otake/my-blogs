@@ -10,3 +10,5 @@ backend/tmp/*
 backend/storage/*
 backend/.env*
 backend/config/master.key
+
+.env
