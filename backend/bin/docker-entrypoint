@@ -1,14 +1,15 @@
 #!/bin/bash -e
 
-# Enable jemalloc for reduced memory usage and latency.
-if [ -z "${LD_PRELOAD+x}" ]; then
-    LD_PRELOAD=$(find /usr/lib -name libjemalloc.so.2 -print -quit)
-    export LD_PRELOAD
+# データベースの準備（作成・マイグレーション）
+if [ "${1}" = "rails" ] && [ "${2}" = "server" ]; then
+  # データベースが起動するまで待機
+  until nc -z db 3306; do
+    echo "Waiting for MySQL to be ready..."
+    sleep 2
+  done
+
+  # データベースのセットアップ
+  bundle exec rails db:prepare
 fi
 
-# If running the rails server then create or migrate existing database
-if [ "${@: -2:1}" == "./bin/rails" ] && [ "${@: -1:1}" == "server" ]; then
-  ./bin/rails db:prepare
-fi
-
-exec "${@}"
+exec "$@"
