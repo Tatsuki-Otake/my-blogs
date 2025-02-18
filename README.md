@@ -95,19 +95,52 @@ npm run dev
 ```
 
 ## API エンドポイント
+- rails s
 ### 記事関連
 
 - GET /api/v1/articles - 記事一覧の取得
+```bash
+curl http://localhost:3000/api/v1/articles
+```
 - GET /api/v1/articles/:id - 記事詳細の取得
+```bash
+curl http://localhost:3000/api/v1/articles/1
+```
 - POST /api/v1/articles - 記事の作成
+```bash
+curl -X POST http://localhost:3000/api/v1/articles \
+     -H "Content-Type: application/json" \
+     -d '{"article": {"title": "new article", "content": "new article content"}}'
+```
 - PATCH /api/v1/articles/:id - 記事の更新
+```bash
+curl -X PATCH http://localhost:3000/api/v1/articles/1 \
+     -H "Content-Type: application/json" \
+     -d '{"article": {"title": "updated article", "content": "updated article content"}}'
+```
 - DELETE /api/v1/articles/:id - 記事の削除
+```bash
+curl -X DELETE http://localhost:3000/api/v1/articles/1
+```
 
 ### 認証関連
 
 - POST /api/v1/auth/sign_in - ログイン
+```bash
+curl -X POST http://localhost:3000/api/v1/auth/sign_in \
+     -H "Content-Type: application/json" \
+     -d '{"email": "user@example.com", "password": "password"}'
+```
 - DELETE /api/v1/auth/sign_out - ログアウト
+```bash
+curl -X DELETE http://localhost:3000/api/v1/auth/sign_out
+```
 - POST /api/v1/auth - ユーザー登録
+```bash
+curl -X POST http://localhost:3000/api/v1/auth \
+     -H "Content-Type: application/json" \
+     -d '{"email": "newuser@example.com", "password": "newpassword", "password_confirmation": "newpassword"}'
+```
 
 ## ディレクトリ構造
 ```
