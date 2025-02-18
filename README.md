@@ -89,7 +89,8 @@ docker-compose up -d db backend
 docker-compose logs -f backend
 
 ## FE
-cd frontend
+nvm install 20.11.0
+nvm use 20.11.0
 npm install
 npm run dev
 ```
