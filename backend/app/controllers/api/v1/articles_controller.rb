@@ -1,5 +1,5 @@
 class Api::V1::ArticlesController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_article, only: [:show, :update, :destroy]
 
   def index
