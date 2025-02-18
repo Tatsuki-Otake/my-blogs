@@ -81,6 +81,17 @@ docker-compose down
 
 # コンテナとボリュームの削除
 docker-compose down -v
+
+# BE
+# フロントエンドコンテナを除外してバックエンドとDBのみ起動
+docker-compose up -d db backend
+# ログを確認する場合
+docker-compose logs -f backend
+
+## FE
+cd frontend
+npm install
+npm run dev
 ```
 
 ## API エンドポイント
